@@ -19,6 +19,9 @@ for line in mini_dict:
     char_list.append(line.split()[0])
     arp_list.append(line.split()[1:])
 
+# closing input file
+mini_dict.close()
+
 for i in range(0, len(char_list)):
     if not char_list[i][0] in fst_trans:
         # adding new states to fst_states

@@ -1,0 +1,51 @@
+
+##### What I Noticed #####
+
+Found incorrect end of sentences:
+1: After punctuation within numbers
+2: After punctuation within a quote
+3. Included newline characters as part of sentences
+3: After name abbreviations (i.e M. Keflezighi)
+4: After month abbreviations (i.e Nov. 5 Victory)
+
+##### Plan to change #####
+
+1. All end of sentence punctuation characters should be immediately followed by whitespace. By adding this
+   I should be able to remove all errors with numbers such as "26.2 mile race", "2:26:53" and "100,000.00"
+2. One exception to the rule I wrote above is if the sentence ends in quotes. So I'm gonna add a ".\"" in
+   the sentence punctuation list
+3. Another exception is when punctuation characters are followed by newlines so I plan to include that
+4. For now I'm handling name abbreviations by checking for a capital letter followed by a period, I think that
+   is the only case which those characters occur in sequences but I could be wrong
+5. For months I created a list of month abbreviations and check if current string of chars is in it
+
+
+##### Original output of tokenizer funtion #####
+
+Sentence 1 : Shalane Flanagan's first-place finish in the NYC Marathon's women's division was an incredible achievement on several levels:
+Sentence 2 :  Not only was it the Marblehead-raised long-distance runner's first major marathon victory in what she suggested might be the final race of her career, but it was also the first time an American woman had won the race since 1977.
+Sentence 3 :  After the race, Flanagan - who withdrew from the Boston Marathon earlier this year due to injury - choked up talking about her Nov.
+Sentence 4 :  5 victory.
+Sentence 5 :
+
+“About nine months ago, I was heartbroken over not getting the opportunity to race the Boston Marathon,” she said.
+Sentence 6 :  “I just kept telling myself that there's going to be delayed gratification and a moment down the road that would make up for it.
+Sentence 7 : ”
+
+“I’ve dreamed of a moment like this since I was a little girl,” said the 36-year-old.
+Sentence 8 :  “It took me seven years to do this;
+Sentence 9 :  a lot of work just went into this one moment.
+Sentence 10 : ”
+
+Flanagan also said that as she finished the 26.
+Sentence 11 : 2 mile race she thought about fellow American runner M.
+Sentence 12 :  Keflezighi, who finished his final career race Sunday, and how she wanted to make him proud.
+Sentence 13 :
+
+“And I think I did!
+Sentence 14 : ” Flanagan said.
+Sentence 15 :  Her finish time was 2:
+Sentence 16 : 26:
+Sentence 17 : 53.
+Sentence 18 :  The prize for 1st place was $100,000.
+Sentence 19 : 00.
