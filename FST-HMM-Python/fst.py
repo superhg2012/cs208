@@ -39,9 +39,7 @@ class FST:
             if not (current in self.states):
                 return "EXCEPTION: " + current + " not a state in this FST [" + ", ".join(self.states) + "]"
 
-            if new_x == "":
-                x -= 1
-            x += 1
+            x = x + len(new_x)
 
         if not (current in self.final):
             return "EXCEPTION: " + current + " not a final state in this FST [" + ", ".join(self.final) + "]"
